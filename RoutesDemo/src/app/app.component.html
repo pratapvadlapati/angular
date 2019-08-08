@@ -1,0 +1,24 @@
+<div class="">
+    <div class="row">
+      <div class="col-md-4">
+        <p>Image source</p>
+      </div>
+      <div class="col-md-8">
+  <h1 style.color="green" class="text-primary">Routing: Demo</h1>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <ul class="nav nav-pills">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/blog">Blog</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/about">About</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="">
+    <h2>Place form components</h2>
+    <router-outlet></router-outlet>
+  </div>
