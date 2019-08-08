@@ -1,0 +1,19 @@
+<p>got-charecter works!</p>
+<img src= "{{ imageUrlChild }}" alt="img"/>
+<ul class="list-group">
+    <li class="list-group-item">{{GotCharecter[0]}}</li>
+    <li class="list-group-item">{{GotCharecter[1]}}</li>
+    <li class="list-group-item">{{GotCharecter[2]}}</li>
+    <li class="list-group-item">{{GotCharecter[3]}}</li>
+</ul>
+<br>
+<button type="button" class="btn btn-primary" (click)="switchFirstAndLast()" name="button">Switch Names</button>
+
+<button type="button" class="btn btn-danger" [disabled]="swithStatus" (click)="Stop()" name="button">Stop</button>
+<br>
+<br>
+<p>TwoWayBinding:</p>
+<div>
+        <input type="text" [(ngModel)]="twoWayData" [value]="twoWayData" name="" value="">
+        {{ twoWayData }}
+    </div>

@@ -1,0 +1,21 @@
+<hr>
+<p>directive-demo works!</p>
+
+<button type="button" name="button" (click)="toggleHeros()">toggle Heros</button>
+
+
+<div class="" *ngIf="toggleHerosFlag">
+        <div class="" *ngFor="let hero of dcHeros; let i=index" (click)="selectHero(hero)">
+                {{i+1}}   {{hero}}
+               </div>
+</div>
+
+<div>
+ <span [ngSwitch]="selectedHero">
+<p *ngSwitchCase="'Batman'">Bruce</p>
+<p *ngSwitchCase="'Superman'">Clarke </p>
+<p *ngSwitchCase="'WonderWoman'">brad </p>
+<p *ngSwitchCase="'Flash'">Flash </p>
+<p *ngSwitchDefault>none of the one!</p>
+</span></div>
+
