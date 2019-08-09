@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="jumbotron">
+        <form novalidate [formGroup]="form" (ngSubmit)="addUser()">
+            <div class="form-group">
+                    <label class=""  for="name">Name</label>
+                    <input type="text" formControlName="name" class="form-control">
+            </div>
+
+           <div *ngIf="form.get('name').hasError('required') && form.get('name').touched"  class="alert alert-danger">
+               Name is required!
+           </div>
+
+            <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" formControlName="contact" class="form-control">
+            </div>
+
+            <div *ngIf="form.get('contact').touched && form.get('contact').invalid" class="alert alert-danger">
+                   <div *ngIf="form.get('contact').hasError('required')">
+                    Contact is required!
+                   </div>
+
+                   <div *ngIf="form.get('contact').hasError('minlength')">
+                        Contact is invalid
+                       </div>
+
+                       <div *ngIf="form.get('contact').hasError('maxlength')">
+                            Contact is invalid
+                           </div>
+
+                </div>
+
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control">
+            </div>
+
+            <div *ngIf="form.get('email').hasError('required') && form.get('name').touched" class="alert alert-danger">
+                    Email is required!
+                </div>
+
+            <div> 
+                <button type="submit" class="btn btn-success" [disabled]="form.invalid">Add User</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<ul class="list-group">
+   <li *ngFor="let user of userList" class="list-group-item">
+       {{ user.name}}
+   </li>
+    
+</ul>
